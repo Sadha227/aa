@@ -21,6 +21,7 @@ public class Pin : MonoBehaviour
     {
         if (collisionObj.tag == "Pin")
         {
+            FindObjectOfType<Managar>().GameOver();
             Debug.Log("¯/_(ツ)_/¯");
         }
         else if (collisionObj.tag == "Rotator")
