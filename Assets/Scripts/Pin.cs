@@ -28,6 +28,11 @@ public class Pin : MonoBehaviour
         {
             isPinned = true;
             transform.SetParent(collisionObj.transform);
+            FindObjectOfType<ScoreText>().ChangeNumberOfPins();
+            Managar managar = FindObjectOfType<Managar>();
+            managar.AddPin();
+            if (managar.GetTotalNumberOfPins() == managar.GetCurrentNumderOfPins()) { managar.LevelComplete(); }
+
         }
     }
 }
