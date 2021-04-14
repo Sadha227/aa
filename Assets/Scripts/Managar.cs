@@ -3,16 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Managar : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+{                                            
+    [SerializeField] Rotator rotator;        
+    [SerializeField] PinSpawner pinSpawner;  
+    [SerializeField] CameraAnimator animator;
+                                             
+    public void GameOver()                   
+    {                                        
+          DisableGameElements();
+        animator.SetGameOverTrigger();
+    }                                        
+                                             
+    public void LevelComplete()              
+    {                                        
+        DisableGameElements();
+        animator.SetLevelCompleteTrigger();
+    }        
+    
+    private void DisableGameElements()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        rotator.enabled = false;
+        pinSpawner.enabled = false;
     }
 }
