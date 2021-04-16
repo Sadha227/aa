@@ -32,7 +32,6 @@ public class Pin : MonoBehaviour
             Managar managar = FindObjectOfType<Managar>();
             managar.AddPin();
             if (managar.GetTotalNumberOfPins() == managar.GetCurrentNumderOfPins()) { managar.LevelComplete(); }
-
         }
     }
 }
