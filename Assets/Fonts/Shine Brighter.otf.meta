@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ad83b2e92cac8294bb64f41225c34bd1
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Shine Brighter
+  fontNames:
+  - Shine Brighter
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b48d49a0cae626d44889ce28ec8bd44b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
