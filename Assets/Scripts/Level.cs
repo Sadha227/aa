@@ -30,14 +30,27 @@ public class Level : MonoBehaviour
     private void EnableLevelLoadButtons()
     {
         if(levelButtons.Length == 0) { return; }
+        int levelReached = PlayerPrefs.GetInt(NEXT_LEVEL_KEY, LEVEL_TO_PLAY);
+        for (int i = 0; i < levelButtons.Length; i++) { if(i > levelReached - 1) { levelButtons[i].interactable = false; } }
+    }
 
+    public void LoadSceneToPlay()
+    {
+        if(PlayerPrefs.GetInt(GAME_COMPLETE_KEY, GAME_INCOMPLETE) == 1)
+        {
+            SceneManager.LoadScene("SelectLevel");
+            return;
+        }
+        int sceneToLoadIndex = PlayerPrefs.GetInt(NEXT_LEVEL_KEY, LEVEL_TO_START);
+        if(sceneToLoadIndex == totalSceneNumber + 1) { SceneManager.LoadScene("SelectorScene"); }
+        else { SceneManager.LoadScene(sceneToLoadIndex); }
     }
 
     public void LoadNextScene()
     {
         if(PlayerPrefs.GetInt(GAME_COMPLETE_KEY, GAME_INCOMPLETE) == 1)
         {
-            SceneManager.LoadScene("SelectorScene");
+            SceneManager.LoadScene("SelectLevel");
             return;
         }
         int nextSceneIndex = PlayerPrefs.GetInt(NEXT_LEVEL_KEY, LEVEL_TO_PLAY);
@@ -61,4 +74,8 @@ public class Level : MonoBehaviour
     public void LoadLevelSelectorScene() { SceneManager.LoadScene("SelectLevel"); }
 
     public void Exit() { Application.Quit(); }
+
+    public void LoadSceneByIndex(int sceneIndex) { SceneManager.LoadScene(sceneIndex); }
+
+    public void ResetProgress() { PlayerPrefs.DeleteAll(); }
 }

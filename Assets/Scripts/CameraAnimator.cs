@@ -7,15 +7,9 @@ public class CameraAnimator : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] Level level;
 
-    public void SetGameOverTrigger()
-    {
-        animator.SetTrigger("GameOver");
-    }
+    public void SetGameOverTrigger() { animator.SetTrigger("GameOver"); }
     
-    public void SetLevelCompleteTrigger()
-    {
-        animator.SetTrigger("LevelComplete");
-    }
+    public void SetLevelCompleteTrigger() { animator.SetTrigger("LevelComplete"); }
 
     public void LoadLevelCompleteScene()
     {

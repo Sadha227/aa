@@ -14,9 +14,10 @@ public class Managar : MonoBehaviour
     public int GetCurrentNumderOfPins() { return currentNumberOfPins; }
     public void AddPin() { currentNumberOfPins++; }
                                              
-    public void GameOver()                   
+    public void GameOver(int sceneIndex)                   
     {                                        
-          DisableGameElements();
+        DisableGameElements();
+        PlayerPrefs.SetInt(Level.LAST_LEVEL_KEY, sceneIndex);
         animator.SetGameOverTrigger();
     }                                        
                                              

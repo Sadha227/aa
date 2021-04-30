@@ -8,9 +8,6 @@ public class PinSpawner : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            Instantiate(pinPrefab, transform.position, Quaternion.identity);
-        }
+        if(Input.GetMouseButtonDown(0)) { Instantiate(pinPrefab, transform.position, Quaternion.identity); }
     }
 }

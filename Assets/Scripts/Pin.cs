@@ -23,7 +23,7 @@ public class Pin : MonoBehaviour
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
         if (collisionObj.tag == "Pin")
         {
-            FindObjectOfType<Managar>().GameOver();
+            FindObjectOfType<Managar>().GameOver(sceneIndex);
             Debug.Log("¯/_(ツ)_/¯");
         }
         else if (collisionObj.tag == "Rotator")
